@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 64px 24px;
+  max-width: 640px;
+  margin-inline: auto;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #2b2521;
+  background: #f3ece0;
+}
+
+/* headings */
+
+h1, h2 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 52px;
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 40px 0 12px;
+  font-size: 30px;
+  font-weight: 500;
+  border-bottom: 1px solid #d6cbb8;
+  padding-bottom: 4px;
+}
+
+h3 {
+  margin: 28px 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6f63;
+}
+
+/* content */
+
+.summary {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.links a {
+  margin-right: 20px;
+}
+
+a {
+  color: #8a5a2b;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 56px;
+  font-size: 14px;
+  color: #7a6f63;
+}
+
+/* hunger games embed */
+
+.demo-note {
+  margin: 0 0 16px;
+}
+
+/* breaks out of the 640px text column so the sim gets its side-by-side layout on desktop */
+.demo {
+  width: min(800px, 100vw - 48px);
+  margin-left: calc(50% - min(400px, 50vw - 24px));
+}
+
+.demo iframe {
+  display: block;
+  width: 100%;
+  height: 480px;
+  border: 1px solid #d6cbb8;
+  border-radius: 8px;
+  background: #1f1f1f;
+}
+
+/* tabs */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 48px 0 20px;
+  border-bottom: 1px solid #d6cbb8;
+}
+
+.tab {
+  font: inherit;
+  font-family: "Dancing Script", cursive;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1;
+  color: #7a6f63;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  padding: 8px 14px 10px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: #2b2521;
+}
+
+.tab.active {
+  color: #2b2521;
+  border-bottom-color: #8a5a2b;
+}
+
+/* posts */
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.post-date {
+  flex: none;
+  width: 110px;
+  font-size: 15px;
+  color: #7a6f63;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.post h1 {
+  font-size: 44px;
+  margin-bottom: 4px;
+}
+
+.post .post-date {
+  margin: 0 0 28px;
+}
+
+.post p {
+  margin: 0 0 20px;
+}

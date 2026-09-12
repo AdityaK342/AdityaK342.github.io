@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aditya Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Aditya Kumar</h1>
+    <p class="summary">
+      I'm a Computer Science student at the University of Illinois Urbana-Champaign.
+      Currently a software engineering intern at Vontive in Seattle. Interested in markets,
+      machine learning, and the software that sits between them. Previously at a stealth startup.
+    </p>
+    <p class="links">
+      <a href="mailto:aditya65@illinois.edu">Email</a>
+      <a href="https://github.com/AdityaK342" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/aditya-kumar-094176272/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Hunger Games Simulation</h2>
+    <p class="demo-note">
+      A predator-prey simulation with adaptive agents. Press Start to run it.
+      <a href="https://adityak342.github.io/HungerGamesWebMain2/" target="_blank" rel="noopener">Open full screen</a>
+    </p>
+    <div class="demo">
+      <iframe
+        src="https://adityak342.github.io/HungerGamesWebMain2/"
+        title="Hunger Games predator-prey simulation"
+        loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-tab="research">Research</button>
+      <button class="tab" role="tab" data-tab="experience">Experience</button>
+      <button class="tab" role="tab" data-tab="personal">Personal</button>
+    </div>
+
+    <div class="panel" id="research" role="tabpanel">
+      <ul>
+        <li><strong>Western Illinois University</strong>, Quantum Chess AI, 2023–24</li>
+        <li><strong>Drug Discovery</strong>, early work toward a cure for leishmaniasis, 2023</li>
+        <li><strong>Independent Study</strong>, military history of India, 2024–25</li>
+      </ul>
+    </div>
+
+    <div class="panel" id="experience" role="tabpanel" hidden>
+      <ul>
+        <li><strong>Vontive</strong>, Software Engineer Intern, 2026</li>
+        <li><strong>Stealth Startup</strong>, Software Engineer Intern, 2025</li>
+      </ul>
+    </div>
+
+    <div class="panel" id="personal" role="tabpanel" hidden>
+      <ul>
+        <li><strong>IMC Prosperity 4</strong>, algorithmic trading, Top 55 in the U.S.</li>
+        <li><strong>Sentinel Auth</strong>, policy-gated API proxy for AI agents (HackIllinois)</li>
+        <li><strong>Biospace Explorers</strong>, RAG over 900+ research papers (NASA Hackathon)</li>
+      </ul>
+
+      <h3>In the works</h3>
+      <ul>
+        <li><strong>Blush</strong>, a beauty app</li>
+        <li><strong>RogueLite</strong>, a mobile game</li>
+        <li><strong>Scouter</strong>, a job board</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="posts">
+    <h2>Posts</h2>
+    <ul class="post-list">
+      <li>
+        <span class="post-date">Sep 11, 2026</span>
+        <a href="posts/hello-world.html">Starting a blog</a>
+      </li>
+    </ul>
+  </section>
+
+  <footer>© 2026 Aditya Kumar</footer>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+    const tabIds = [...tabs].map(t => t.dataset.tab);
+
+    function showTab(id) {
+      tabs.forEach(t => {
+        const active = t.dataset.tab === id;
+        t.classList.toggle("active", active);
+        t.setAttribute("aria-selected", active);
+      });
+      panels.forEach(p => p.hidden = p.id !== id);
+    }
+
+    tabs.forEach(t => t.addEventListener("click", () => {
+      showTab(t.dataset.tab);
+      history.replaceState(null, "", "#" + t.dataset.tab);
+    }));
+
+    const fromHash = location.hash.slice(1);
+    showTab(tabIds.includes(fromHash) ? fromHash : tabIds[0]);
+  </script>
+
+</body>
+</html>
