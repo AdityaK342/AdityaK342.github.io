@@ -26,17 +26,21 @@
   </header>
 
   <section>
-    <h2>Hunger Games Simulation</h2>
+    <h2>Hunger Games, as a graph</h2>
     <p class="demo-note">
-      A predator-prey simulation with adaptive agents. Press Start to run it.
-      <a href="https://adityak342.github.io/HungerGamesWebMain2/" target="_blank" rel="noopener">Open full screen</a>
+      This is the code of my predator-prey simulation drawn as a graph: every dot is a
+      class, every line is a relationship the code has (inherits, calls, references).
+      I built a Claude Code plugin, <strong>codegraph</strong>, that parses a repo into this
+      structure so Claude can walk relationships instead of grepping. Hover a dot to see
+      its neighbors, click to open the source.
+      <a href="https://adityak342.github.io/HungerGamesWebMain2/" target="_blank" rel="noopener">Run the simulation itself</a>
     </p>
-    <div class="demo">
-      <iframe
-        src="https://adityak342.github.io/HungerGamesWebMain2/"
-        title="Hunger Games predator-prey simulation"
-        loading="lazy"></iframe>
+    <div class="demo graph">
+      <canvas id="graph" aria-label="Class graph of the Hunger Games simulation"></canvas>
+      <div class="graph-tip" id="graph-tip" hidden></div>
     </div>
+    <p class="graph-legend" id="graph-legend"></p>
+    <p class="graph-summary" id="graph-summary"></p>
   </section>
 
   <section>
@@ -89,6 +93,7 @@
 
   <footer>© 2026 Aditya Kumar</footer>
 
+  <script src="graph.js"></script>
   <script>
     const tabs = document.querySelectorAll(".tab");
     const panels = document.querySelectorAll(".panel");
